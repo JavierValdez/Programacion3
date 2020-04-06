@@ -9,31 +9,32 @@ import javax.swing.JOptionPane;
 
 /**
  *
- * @author Dell Laptop
+ * lkn@author Dell Laptop
  */
 public class GestionEscritorios {
-    NodoEscritorio cabeza, ultimo ; 
+
+    NodoEscritorio cabeza, ultimo;
     int numero;
-    
-    public boolean colaVacio(){
-        return cabeza==null;
+
+    public boolean colaVacio() {
+        return cabeza == null;
     }
-    
-    public void push(){
-        if(colaVacio()){
-            numero=1;
-                }else{
-                    numero=1+ultimo.escritorio.numero;
-                    }      
-        Escritorio escritorio = new Escritorio(numero);  
-        NodoEscritorio nuevoNodo = new NodoEscritorio(escritorio);
-        if(cabeza==null){
-            cabeza=nuevoNodo;
-            ultimo=nuevoNodo;
-        }else{
-            ultimo.siguiente=nuevoNodo;
-            ultimo=nuevoNodo;
+
+    public void push() {
+        if (colaVacio()) {
+            numero = 1;
+        } else {
+            numero = 1 + ultimo.escritorio.numero;
         }
-        JOptionPane.showMessageDialog(null,"Se ha creado el escritorio numero: "+escritorio.numero);
+        Escritorio escritorio = new Escritorio(numero);
+        NodoEscritorio nuevoNodo = new NodoEscritorio(escritorio);
+        if (cabeza == null) {
+            cabeza = nuevoNodo;
+            ultimo = nuevoNodo;
+        } else {
+            ultimo.siguiente = nuevoNodo;
+            ultimo = nuevoNodo;
+        }
+        JOptionPane.showMessageDialog(null, "Se ha creado el escritorio numero: " + escritorio.numero);
     }
 }

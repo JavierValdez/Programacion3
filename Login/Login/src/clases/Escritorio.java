@@ -10,22 +10,22 @@ package clases;
  * @author Dell Laptop
  */
 public class Escritorio {
+
     int numero;
     Ticket ticket;
     Usuario user;
-    
-    public Escritorio(int n){
-        this.numero=n;
+
+    public Escritorio(int n) {
+        this.numero = n;
     }
 
     public void setTicket(Ticket ticket) {
         this.ticket = ticket;
     }
-        
+
     public Ticket getTicket() {
         return ticket;
     }
-
 
     public void setUser(Usuario user) {
         this.user = user;
