@@ -173,6 +173,12 @@ public class Interfaz extends javax.swing.JFrame {
                 AccesoEscritorio acceso = new AccesoEscritorio(nuevoUsuario.getUser());
                 acceso.setVisible(true);
                 dispose();
+                break;
+            case "TICKET":
+                AccesoCreadorTickets accesoTicket = new AccesoCreadorTickets(nuevoUsuario.getUser());
+                accesoTicket.setVisible(true);
+                dispose();
+                break;
         }
     }//GEN-LAST:event_BtnIngresarActionPerformed
         

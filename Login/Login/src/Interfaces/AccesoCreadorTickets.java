@@ -14,13 +14,12 @@ public class AccesoCreadorTickets extends javax.swing.JFrame {
     /**
      * Creates new form AccesoCreadorTickets
      */
-    public AccesoCreadorTickets() {
+    public AccesoCreadorTickets(String nombre) {
         initComponents();
         this.setLocationRelativeTo(null);
-        
-        
+        BienvenidaTXT.setText("BIENVENIDO "+nombre);
     }
-
+    CrearTicket crearticket = new CrearTicket();
     /**
      * This method is called from within the constructor to initialize the form.
      * WARNING: Do NOT modify this code. The content of this method is always
@@ -32,7 +31,7 @@ public class AccesoCreadorTickets extends javax.swing.JFrame {
 
         jPanel1 = new javax.swing.JPanel();
         jPanel2 = new javax.swing.JPanel();
-        jLabel1 = new javax.swing.JLabel();
+        BienvenidaTXT = new javax.swing.JLabel();
         BtnCrearTicket = new javax.swing.JButton();
         BtnModificarTicket = new javax.swing.JButton();
         BtnEliminarTicket = new javax.swing.JButton();
@@ -43,19 +42,19 @@ public class AccesoCreadorTickets extends javax.swing.JFrame {
 
         jPanel2.setBackground(new java.awt.Color(0, 0, 0));
 
-        jLabel1.setFont(new java.awt.Font("Tahoma", 0, 24)); // NOI18N
-        jLabel1.setForeground(new java.awt.Color(255, 255, 255));
-        jLabel1.setText("BIENVENIDO ");
+        BienvenidaTXT.setFont(new java.awt.Font("Tahoma", 0, 24)); // NOI18N
+        BienvenidaTXT.setForeground(new java.awt.Color(255, 255, 255));
+        BienvenidaTXT.setText("BIENVENIDO ");
 
         javax.swing.GroupLayout jPanel2Layout = new javax.swing.GroupLayout(jPanel2);
         jPanel2.setLayout(jPanel2Layout);
         jPanel2Layout.setHorizontalGroup(
             jPanel2Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addComponent(jLabel1, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+            .addComponent(BienvenidaTXT, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
         );
         jPanel2Layout.setVerticalGroup(
             jPanel2Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addComponent(jLabel1, javax.swing.GroupLayout.DEFAULT_SIZE, 100, Short.MAX_VALUE)
+            .addComponent(BienvenidaTXT, javax.swing.GroupLayout.DEFAULT_SIZE, 100, Short.MAX_VALUE)
         );
 
         BtnCrearTicket.setText("CREAR TICKET");
@@ -110,7 +109,7 @@ public class AccesoCreadorTickets extends javax.swing.JFrame {
     }// </editor-fold>//GEN-END:initComponents
 
     private void BtnCrearTicketActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_BtnCrearTicketActionPerformed
-        // TODO add your handling code here:
+       crearticket.setVisible(true);
     }//GEN-LAST:event_BtnCrearTicketActionPerformed
 
     /**
@@ -148,10 +147,10 @@ public class AccesoCreadorTickets extends javax.swing.JFrame {
     }
 
     // Variables declaration - do not modify//GEN-BEGIN:variables
+    private javax.swing.JLabel BienvenidaTXT;
     private javax.swing.JButton BtnCrearTicket;
     private javax.swing.JButton BtnEliminarTicket;
     private javax.swing.JButton BtnModificarTicket;
-    private javax.swing.JLabel jLabel1;
     private javax.swing.JPanel jPanel1;
     private javax.swing.JPanel jPanel2;
     // End of variables declaration//GEN-END:variables

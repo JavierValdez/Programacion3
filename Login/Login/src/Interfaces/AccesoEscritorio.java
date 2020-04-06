@@ -17,7 +17,6 @@ public class AccesoEscritorio extends javax.swing.JFrame {
     public AccesoEscritorio(String nombre) {
         initComponents();
         this.setLocationRelativeTo(null);
-        Interfaz usuario= new Interfaz();
         BienvenidaTxt.setText("Bienvenido "+nombre);
     }
 

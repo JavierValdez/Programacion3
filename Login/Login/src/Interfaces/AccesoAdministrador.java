@@ -20,10 +20,8 @@ public class AccesoAdministrador extends javax.swing.JFrame {
      */
     public AccesoAdministrador(String nombre) {
         initComponents();
-        this.setLocationRelativeTo(null);//colocar en el centro
-        Interfaz usuario= new Interfaz();
+        this.setLocationRelativeTo(null);
         BienvenidaTxt.setText("Bienvenido "+nombre);
-        System.out.print(usuario.nuevoUsuario.getUser());
     }
     
         GestionEscritorios crearEscritorio = new GestionEscritorios();
