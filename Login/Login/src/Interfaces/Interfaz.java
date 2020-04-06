@@ -170,7 +170,7 @@ public class Interfaz extends javax.swing.JFrame {
                 dispose();
                 break;
             case "ESCRITORIO":
-                AccesoEscritorio acceso = new AccesoEscritorio();
+                AccesoEscritorio acceso = new AccesoEscritorio(nuevoUsuario.getUser());
                 acceso.setVisible(true);
                 dispose();
         }

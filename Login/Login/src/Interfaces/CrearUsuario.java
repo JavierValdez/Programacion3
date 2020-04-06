@@ -91,7 +91,7 @@ public class CrearUsuario extends javax.swing.JFrame {
 
         jLabel5.setText("SELECCIONAR TIPO DE USUARIO");
 
-        ComboBoxTipoUsuario.setModel(new javax.swing.DefaultComboBoxModel<>(new String[] { "ADMINISTRADOR", "ESCRITORIO" }));
+        ComboBoxTipoUsuario.setModel(new javax.swing.DefaultComboBoxModel<>(new String[] { "ADMINISTRADOR", "ESCRITORIO", "TICKET" }));
         ComboBoxTipoUsuario.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
                 ComboBoxTipoUsuarioActionPerformed(evt);

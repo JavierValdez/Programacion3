@@ -18,11 +18,11 @@ public class AccesoAdministrador extends javax.swing.JFrame {
     /**
      * Creates new form AccesoAdministrador
      */
-    public AccesoAdministrador(String t) {
+    public AccesoAdministrador(String nombre) {
         initComponents();
         this.setLocationRelativeTo(null);//colocar en el centro
         Interfaz usuario= new Interfaz();
-        BienvenidaTxt.setText("Bienvenido "+t);
+        BienvenidaTxt.setText("Bienvenido "+nombre);
         System.out.print(usuario.nuevoUsuario.getUser());
     }
     
