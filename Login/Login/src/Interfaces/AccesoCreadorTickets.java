@@ -17,6 +17,7 @@ public class AccesoCreadorTickets extends javax.swing.JFrame {
     public AccesoCreadorTickets() {
         initComponents();
         this.setLocationRelativeTo(null);
+        
     }
 
     /**
