@@ -14,8 +14,7 @@ import javax.swing.JOptionPane;
 public class GestionTickets {
 
     NodoTicket cabeza, ultimo;
-    NodoTicket esp1, esp2;
-    int numero, numeroes;
+    int numero;
     String tipo;
     Impresion imprimir = new Impresion();
 
@@ -23,51 +22,24 @@ public class GestionTickets {
         return cabeza == null;
     }
 
-    public boolean colaVacio1() {
-        return esp1 == null;
-    }
-
     public void push(String tipo) {
-        JOptionPane.showMessageDialog(null, tipo);
-        if (tipo.equals("GENERAL")) {
-            if (colaVacio()) {
-                numero = 1;
-            } else {
-                numero = 1 + ultimo.ticket.numero;
-            }
-            Ticket nuevoTicket = new Ticket(numero, tipo);
-            NodoTicket nuevoNodo = new NodoTicket(nuevoTicket);
-            if (cabeza == null) {
-                cabeza = nuevoNodo;
-                ultimo = nuevoNodo;
-            } else {
-                ultimo.siguiente = nuevoNodo;
-                ultimo = nuevoNodo;
-            }
-            imprimir.generarPdf(nuevoTicket);
-
-            JOptionPane.showMessageDialog(null, "Se ha creado el ticket numero: " + nuevoTicket.numero + " de tipo: " + nuevoTicket.tipo);
+        if (colaVacio()) {
+            numero = 1;
         } else {
-
-            if (colaVacio1()) {
-                numeroes = 1;
-            } else {
-                numeroes = 1 + esp2.ticket.numero;
-            }
-            Ticket nuevoTicket = new Ticket(numeroes, tipo);
-            NodoTicket nuevoNodo = new NodoTicket(nuevoTicket);
-            if (esp1 == null) {
-                esp1 = nuevoNodo;
-                esp2 = nuevoNodo;
-            } else {
-                esp2.siguiente = nuevoNodo;
-                esp2 = nuevoNodo;
-            }
-            imprimir.generarPdf(nuevoTicket);
-
-            JOptionPane.showMessageDialog(null, "Se ha creado el ticket numero: " + nuevoTicket.numero + " de tipo: " + nuevoTicket.tipo);
-
+            numero = 1 + ultimo.ticket.numero;
         }
+        Ticket nuevoTicket = new Ticket(numero, tipo);
+        NodoTicket nuevoNodo = new NodoTicket(nuevoTicket);
+        if (cabeza == null) {
+            cabeza = nuevoNodo;
+            ultimo = nuevoNodo;
+        } else {
+            ultimo.siguiente = nuevoNodo;
+            ultimo = nuevoNodo;
+        }
+        imprimir.generarPdf(nuevoTicket);
 
+        JOptionPane.showMessageDialog(null, "Se ha creado el ticket numero: " + nuevoTicket.numero + " de tipo: " + nuevoTicket.tipo);
     }
+
 }
