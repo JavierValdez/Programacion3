@@ -14,7 +14,7 @@ import javax.swing.JOptionPane;
 public class GestionTickets {
 
     NodoTicket cabeza, ultimo;
-    NodoTicket esp1, esp2;
+    NodoTicket EspInf, EspSup,GenInf,GenSup;
     int numero, numeroes;
     String tipo;
     Impresion imprimir = new Impresion();
@@ -24,11 +24,11 @@ public class GestionTickets {
     }
 
     public boolean colaVacio1() {
-        return esp1 == null;
+        return EspInf == null;
     }
 
     public void push(String tipo) {
-        JOptionPane.showMessageDialog(null, tipo);
+        
         if (tipo.equals("GENERAL")) {
             if (colaVacio()) {
                 numero = 1;
@@ -52,22 +52,40 @@ public class GestionTickets {
             if (colaVacio1()) {
                 numeroes = 1;
             } else {
-                numeroes = 1 + esp2.ticket.numero;
+                numeroes = 1 + EspSup.ticket.numero;
             }
             Ticket nuevoTicket = new Ticket(numeroes, tipo);
             NodoTicket nuevoNodo = new NodoTicket(nuevoTicket);
-            if (esp1 == null) {
-                esp1 = nuevoNodo;
-                esp2 = nuevoNodo;
+            if (EspInf == null) {
+                EspInf = nuevoNodo;
+                EspSup = nuevoNodo;
             } else {
-                esp2.siguiente = nuevoNodo;
-                esp2 = nuevoNodo;
+                EspSup.siguiente = nuevoNodo;
+                EspSup = nuevoNodo;
             }
             imprimir.generarPdf(nuevoTicket);
 
             JOptionPane.showMessageDialog(null, "Se ha creado el ticket numero: " + nuevoTicket.numero + " de tipo: " + nuevoTicket.tipo);
 
         }
+        
+        if(!colaVacio1()){
+            GenInf=EspInf;
+            GenSup=EspSup;
+            GenSup.siguiente=cabeza;
+            GenSup=ultimo;
+        }else{
+            GenInf=cabeza;
+            GenSup=ultimo;
+        }
+        NodoTicket n=GenInf;
+        while(n!=null){
+            JOptionPane.showMessageDialog(null,"Numero: "+n.ticket.numero+" clase "+n.ticket.tipo);
+            n=n.siguiente;
+        }
+        
+        
+        
 
     }
 }
