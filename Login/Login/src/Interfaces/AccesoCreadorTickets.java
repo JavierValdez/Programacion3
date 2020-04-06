@@ -17,6 +17,7 @@ public class AccesoCreadorTickets extends javax.swing.JFrame {
     public AccesoCreadorTickets(String nombre) {
         initComponents();
         this.setLocationRelativeTo(null);
+
         BienvenidaTXT.setText("BIENVENIDO "+nombre);
     }
     CrearTicket crearticket = new CrearTicket();
