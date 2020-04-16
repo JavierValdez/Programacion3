@@ -27,7 +27,7 @@ public class Ticket {
         this.tipo=tipo;
         this.fecha=fecha;
         this.hora=hora;
-        this.id=this.idgenerador(tipo,num);
+        this.id=this.idgenerador(num,tipo);
 
     }
     public String getHora() {
@@ -37,9 +37,9 @@ public class Ticket {
     public String getFecha() {
         return fecha.format(date);
     }
-    private String idgenerador(String a,int b){
+    private String idgenerador(int b,String a){
         char[] id = tipo.toCharArray();
-        String z = String.valueOf(id[0])+String.valueOf(b);
+        String z = String.valueOf(b)+String.valueOf(id[0]);
         return z;
     }
 }

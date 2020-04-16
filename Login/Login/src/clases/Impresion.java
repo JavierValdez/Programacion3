@@ -25,9 +25,8 @@ public class Impresion {
                 doc.open();
                 doc.add(getTitulo("Banco Pistio"));
                 doc.add(getTitulo(" "));
-                doc.add(getNumero(Integer.toString(ticket.numero)));
+                doc.add(getId(ticket.id));
                 doc.add(getTitulo(" "));
-                doc.add(getTipo("Tipo de ticket: "+ticket.tipo));
                 doc.add(getFecha(ticket.getFecha()));
                 doc.add(getHora(ticket.getHora()));
                 doc.close();              
@@ -48,21 +47,12 @@ public class Impresion {
             p.add(c);
             return p;
         }
-        private Paragraph getNumero(String numero){
+        private Paragraph getId(String id){
             Paragraph p= new Paragraph();
             Chunk c= new Chunk();
             p.setAlignment(Element.ALIGN_CENTER);
-            c.append(numero);
+            c.append(id);
             c.setFont(fuenteTicket);
-            p.add(c);
-            return p;
-        }
-        private Paragraph getTipo(String tipo){
-            Paragraph p= new Paragraph();
-            Chunk c= new Chunk();
-            p.setAlignment(Element.ALIGN_CENTER);
-            c.append(tipo);
-            c.setFont(fuenteNormal);
             p.add(c);
             return p;
         }
