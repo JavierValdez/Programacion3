@@ -78,6 +78,14 @@ public class GestionTickets {
             GenInf=cabeza;
             GenSup=ultimo;
         }
+        NodoTicket n=GenInf;
+        while(n!=null){
+            JOptionPane.showMessageDialog(null,"Numero: "+n.ticket.numero+" clase "+n.ticket.tipo);
+            n=n.siguiente;
+        }
+        
+        
+        
 
     }
 }

@@ -8,6 +8,7 @@ package clases;
 import java.text.DateFormat;
 import java.text.SimpleDateFormat;
 import java.util.Date;
+import javax.swing.JOptionPane;
 
 /**
  *
@@ -16,6 +17,7 @@ import java.util.Date;
 public class Ticket {
     public int numero;
     String tipo; 
+    String id;
     Date date = new Date();
     DateFormat hora = new SimpleDateFormat("HH:mm:ss");
     DateFormat fecha = new SimpleDateFormat("dd/MM/yyyy");  
@@ -25,6 +27,7 @@ public class Ticket {
         this.tipo=tipo;
         this.fecha=fecha;
         this.hora=hora;
+        this.id=this.idgenerador(tipo,num);
 
     }
     public String getHora() {
@@ -33,5 +36,10 @@ public class Ticket {
 
     public String getFecha() {
         return fecha.format(date);
+    }
+    private String idgenerador(String a,int b){
+        char[] id = tipo.toCharArray();
+        String z = String.valueOf(id[0])+String.valueOf(b);
+        return z;
     }
 }
