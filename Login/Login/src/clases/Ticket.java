@@ -28,7 +28,6 @@ public class Ticket {
         this.fecha=fecha;
         this.hora=hora;
         this.id=this.idgenerador(tipo,num);
-        JOptionPane.showMessageDialog(null, id);
 
     }
     public String getHora() {
